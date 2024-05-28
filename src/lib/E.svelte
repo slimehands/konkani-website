@@ -5,7 +5,7 @@
       elements: { trigger, content},
       states: { open },
     } = createPopover();
-    export let is: String
+    export let title: String
   </script>
   
   <button
@@ -15,7 +15,7 @@
     aria-label="Update dimensions"
   >
     <div use:melt={$content}>
-    {is}
+    {title}
     </div>
     <slot />
   </button>

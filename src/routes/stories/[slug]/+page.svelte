@@ -2,6 +2,7 @@
 	// @ts-ignore
 	export let data;
 	const { title, level, Content, slug} = data;
+	console.log(data)
 </script>
 
 <article>
