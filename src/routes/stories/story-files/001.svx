@@ -1,0 +1,9 @@
+---
+title: Harry ani Sally
+level: 0.5
+---
+<script>
+    import E from "$lib/E.svelte"
+
+</script>
+Don <E is="children">burghi</E> asli, Harry ani Sally, Thi <E is="brother">baau </E>ani <E is="sister"> boinn</E>. Thi Texasanth, <E is="in a big house" >vodle garanth </E> <E is="they live">raautat</E> Texasanth <E is="hot"> garam </E> <E is="is"> asa </E>
