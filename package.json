@@ -24,7 +24,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-static": "^3.0.1",
-    "remark-abbr": "^1.4.2"
+    "@sveltejs/adapter-static": "^3.0.1"
   }
 }
