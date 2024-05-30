@@ -10,4 +10,5 @@ storylist:<br/>
 {#each posts as post}
     <a href={post.slug}><h2>{post.title}</h2></a>
     level: {post.level}<br/>
+    tags: <span>{post.tags}</span>
 {/each}

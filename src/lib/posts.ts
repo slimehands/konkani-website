@@ -13,6 +13,7 @@ export function files(){
                 slug: path.slice(11, -4).replace("/content", ""),
                 level: frontmatter.data.level,
                 content: strip(content),
+                tags: frontmatter.data.tags
             }
         })
         .filter(Boolean)

@@ -41,6 +41,7 @@
 							<a href="{result.slug}">
 								{@html result.title}
 							</a>
+							<span style="background-color: blue;">{result.tags}</span>
 							<p>{@html result.content}</p>
 						</li>
 					{/each}
