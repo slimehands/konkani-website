@@ -25,7 +25,7 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/stories">stories</a>
+				<a href="/articles">articles</a>
 			</li>
             <!--
 			<li>
