@@ -6,7 +6,7 @@ import {vitePreprocess} from '@sveltejs/vite-plugin-svelte';
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: [sequence([vitePreprocess(), preprocessMeltUI()]), mdsvex({layout: "/src/lib/mdLayout.svelte"})],
+  preprocess: [sequence([vitePreprocess(), preprocessMeltUI()]), mdsvex()],
 
   kit: {
     adapter: adapter()

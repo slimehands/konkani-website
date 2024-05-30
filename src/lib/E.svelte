@@ -8,15 +8,24 @@
     export let title: String
   </script>
   
-  <button
+  <span
     type="button"
     class="trigger"
     use:melt={$trigger}
     aria-label="Update dimensions"
   >
-    <div use:melt={$content}>
+    <div class="content" use:melt={$content}>
     {title}
     </div>
     <slot />
-  </button>
-  
+  </span>
+  <style>
+    .trigger {
+      font-style: oblique;
+      text-decoration: #6fbeff underline wavy
+    }
+    .content {
+      background-color: hsl(207, 100%, 31%);
+      color: whitesmoke;
+    }
+  </style>

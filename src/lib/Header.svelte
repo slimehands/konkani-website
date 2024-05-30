@@ -5,6 +5,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		font-family: 'Fugaz One', display;
 	}
 
 	ul {

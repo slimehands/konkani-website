@@ -24,6 +24,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource-variable/manrope": "^5.0.20",
+    "@fontsource/fugaz-one": "^5.0.19",
     "@sveltejs/adapter-static": "^3.0.1",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
