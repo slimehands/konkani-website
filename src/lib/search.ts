@@ -26,14 +26,13 @@ export function searchPostsIndex(searchTerm: string) {
       // filter the posts based on the matched index
           .map((index) => posts[index as number])
       // you can do whatever you want at this point 👌
-          .map(({ slug, title, content, tags}) => {
+          .map(({ slug, title, content }) => {
               return {
                   slug,
           // replace match in title with a marker
                   title: replaceTextWithMarker(title, match),
           // match words in post and replace matches with marker
                   content: getMatches(content, match),
-                  tags: replaceTextWithMarker(tags, match)
               }
           })
   }
@@ -48,6 +47,7 @@ export function searchPostsIndex(searchTerm: string) {
 	let match
 
 	while ((match = regex.exec(text)) !== null && matches < limit) {
+		// push that shit
     indexes.push(match.index)
 		// increment matches
 		matches++

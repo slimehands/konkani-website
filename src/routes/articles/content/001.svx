@@ -1,6 +1,5 @@
 ---
 level: .5
 title: "start"
-tags: story, present-tense
 ---
 

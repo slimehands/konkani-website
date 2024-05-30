@@ -1,7 +1,6 @@
 ---
 title: Harry ani Sally
 level: 1
-tags: story, present-tense
 ---
 <script>
     import E from "$lib/E.svelte"
