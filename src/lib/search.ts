@@ -1,19 +1,23 @@
 import FlexSearch from 'flexsearch'
 
-let postsIndex: FlexSearch.Index
+let postsIndex: FlexSearch.Document<{title:String, content:String},false>
 let posts: any[]
 
 export function createPostsIndex(data: any[]) {
   // create the posts index
-	postsIndex = new FlexSearch.Index({ tokenize: 'forward' })
+	postsIndex = new FlexSearch.Document({ tokenize: 'forward', document:{
+    index:["title", "content"],
+    id: "id"
+  }})
 
-	data.forEach((post, i) => {
+	data.forEach((post, id) => {
     // index the title and content together
-		const item = `${post.title} ${post.content}`
+		const title: String =post.title
+    const content: String= post.content
     // add the item to the index 👍️
-		postsIndex.add(i, item)
+		postsIndex.add(id,{title ,content})
 	})
-
+  console.log(posts)
 	posts = data
 }
 export function searchPostsIndex(searchTerm: string) {
@@ -24,7 +28,7 @@ export function searchPostsIndex(searchTerm: string) {
   
       return results
       // filter the posts based on the matched index
-          .map((index) => posts[index as number])
+          .map((index) => posts[index.result[0] as number])
       // you can do whatever you want at this point 👌
           .map(({ slug, title, content }) => {
               return {
