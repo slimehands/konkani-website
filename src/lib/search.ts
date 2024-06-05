@@ -1,30 +1,30 @@
 import FlexSearch from 'flexsearch'
 
-let postsIndex: FlexSearch.Document<{title:String, content:String},false>
+let Index: FlexSearch.Document<{title:String, content:String, tags?:String[]},false>
 let posts: any[]
 
-export function createPostsIndex(data: any[]) {
+export function createIndex(data: any[]) {
   // create the posts index
-	postsIndex = new FlexSearch.Document({ tokenize: 'forward', document:{
+	Index = new FlexSearch.Document({ tokenize: 'forward', document:{
     index:["title", "content"],
     id: "id"
   }})
 
 	data.forEach((post, id) => {
-    // index the title and content together
 		const title: String =post.title
     const content: String= post.content
+    const tags: String[] = post.tags
     // add the item to the index 👍️
-		postsIndex.add(id,{title ,content})
+		Index.add(id,{title ,content})
 	})
   console.log(posts)
 	posts = data
 }
-export function searchPostsIndex(searchTerm: string) {
+export function searchIndex(searchTerm: string) {
     // escape special regex characters
       const match = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     // return matching post indexes 💪
-      const results = postsIndex.search(match)
+      const results = Index.search(match)
   
       return results
       // filter the posts based on the matched index
@@ -51,7 +51,7 @@ export function searchPostsIndex(searchTerm: string) {
 	let match
 
 	while ((match = regex.exec(text)) !== null && matches < limit) {
-		// push that shit
+	
     indexes.push(match.index)
 		// increment matches
 		matches++

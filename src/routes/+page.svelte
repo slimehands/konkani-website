@@ -1,8 +1,7 @@
 <script lang="ts">
-    import E from "$lib/E.svelte";
 
 	import { onMount } from 'svelte'
-	import { createPostsIndex, searchPostsIndex } from '$lib/search'
+	import { createIndex, searchIndex } from '$lib/search'
 
 	let search: 'loading' | 'ready' = 'loading'
 	let searchTerm = ''
@@ -12,14 +11,14 @@
     // get the posts
 		const posts = await fetch('/search.json').then((res) => res.json())
 		// create search index
-    createPostsIndex(posts)
+    createIndex(posts)
     // we're in business 🤝
 		search = 'ready'
 	})
 
 	$: if (search === 'ready') {
     // runs each time `searchTerm` updates
-		results = searchPostsIndex(searchTerm)
+		results = searchIndex(searchTerm)
 	}
 </script>
 
